@@ -1,0 +1,44 @@
+.skeleton-dropdown {
+  height: 55px;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  background: #e5e7eb;
+  display:flex;
+  flex-direction: column;
+}
+
+.skeleton-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #e5e7eb;
+  min-height: 200px;
+}
+
+/* shimmer effect */
+
+.skeleton-card::before,
+.skeleton-dropdown::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -200px;
+  width: 200px;
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,0.7),
+    transparent
+  );
+
+  animation: shimmer 1.3s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    left: 100%;
+  }
+}
